@@ -1,5 +1,5 @@
-Coding Dojo Geofusion
+# Geofusion Coding Dojo
 
-Desafio:
+##### Desafio 1#:
 
 Desenvolver uma API para geocodificação e geocodificação reversa baseada em RESTFul Web Services.
