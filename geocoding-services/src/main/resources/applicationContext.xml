@@ -40,23 +40,23 @@
 	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
 
 	<!-- REST Web Service -->
-<!-- 	<jaxrs:server id="rest" address="/rest"> -->
-<!-- 		<jaxrs:serviceBeans> -->
-<!-- 			?? -->
-<!-- 		</jaxrs:serviceBeans> -->
-<!-- 		<jaxrs:extensionMappings> -->
-<!-- 			<entry key="json" value="application/json" /> -->
-<!-- 			<entry key="xml" value="application/xml" /> -->
-<!-- 		</jaxrs:extensionMappings> -->
-<!-- 		<jaxrs:providers> -->
-<!-- 			<ref bean="jsonProvider" /> -->
-<!-- 			<ref bean="jaxbProvider" /> -->
-<!-- 		</jaxrs:providers> -->
-<!-- 		<jaxrs:features> -->
-<!-- 			<cxf:logging /> -->
-<!-- 		</jaxrs:features> -->
-<!-- 	</jaxrs:server> -->
+	<jaxrs:server id="rest" address="/rest">
+		<jaxrs:serviceBeans>
+			<ref bean="geocodingService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+		</jaxrs:extensionMappings>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="jaxbProvider" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<cxf:logging />
+		</jaxrs:features>
+	</jaxrs:server>
 
-	<!-- Data Source ? -->
+	<jee:jndi-lookup id="myDataSource" jndi-name="jdbc/MyDataSource" expected-type="javax.sql.DataSource" />
 
 </beans>

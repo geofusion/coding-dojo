@@ -3,17 +3,20 @@
 
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
 
-<!-- 	<New id="dataSource" class="org.eclipse.jetty.plus.jndi.Resource"> -->
-<!-- 		<Arg></Arg> -->
-<!-- 		<Arg>jdbc/MyDataSource</Arg> -->
-<!-- 		<Arg> -->
-<!-- 			<New class="org.apache.commons.dbcp.BasicDataSource"> -->
-<!-- 				<Set name="driverClassName">oracle.jdbc.driver.OracleDriver</Set> -->
-<!-- 				<Set name="url">jdbc:oracle:thin:@localhost:1521:GFN</Set> -->
-<!-- 				<Set name="username">foo</Set> -->
-<!-- 				<Set name="password">bar</Set> -->
-<!-- 				<Set name="validationQuery">SELECT 1 FROM DUAL</Set> -->
-<!-- 			</New> -->
-<!-- 		</Arg> -->
-<!-- 	</New> -->
+	<New id="dataSource" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg></Arg>
+		<Arg>jdbc/MyDataSource</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">org.postgresql.Driver</Set>
+				<Set name="url">jdbc:postgresql://localhost:5432/TESTE</Set>
+				<Set name="username">username</Set>
+				<Set name="password">password</Set>
+				<Set name="initialSize">10</Set>
+				<Set name="maxActive">5</Set>
+				<Set name="maxWait">5000</Set>
+				<Set name="validationQuery">SELECT 1 FROM DUAL</Set>
+			</New>
+		</Arg>
+	</New>
 </Configure>
